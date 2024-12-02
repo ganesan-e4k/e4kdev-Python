@@ -1,0 +1,38 @@
+"use client";
+
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowMaximize, faWindowRestore } from '@fortawesome/free-solid-svg-icons';
+
+const BootstrapModal = ({ showModal, handleClose }) => {
+  const [isMaximized, setIsMaximized] = useState(false);
+
+  const toggleMaximize = () => {
+    setIsMaximized(!isMaximized);
+  };
+
+  const modalDialogClass = isMaximized ? 'modal-dialog modal-fullscreen' : 'modal-dialog';
+
+  return (
+    <div className={`modal fade ${showModal ? 'in' : ''}`} style={{ display: showModal ? 'block' : 'none' }}>
+      <div className={modalDialogClass}>
+        <div className="modal-content">
+          <div className="modal-header">
+            <button type="button" className="close" onClick={handleClose}>
+              &times;
+            </button>
+            <h4 className="modal-title">Modal heading</h4>
+            <button type="button" className="btn btn-link" onClick={toggleMaximize}>
+               <FontAwesomeIcon icon={isMaximized ? faWindowRestore : faWindowMaximize} />
+            </button>
+          </div>
+          <div className="modal-body">
+            Woohoo, you're reading this text in a modal!
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BootstrapModal;

@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+body {
+  font-family: "Segoe UI","Segoe WP",Segoe,device-segoe,Tahoma,Helvetica,Arial,sans-serif;
+}
+
+/* Top header */
+
+.top-bar{
+  background: black;
+  color: #ffffff;
+  height: 50px;
+}
+
+.topbar-productname{
+  display: flex;
+}
+
+.topbar-productname span{
+  align-content:center;
+  font-weight: 600;
+}
+
+.topbar-productname img{
+  width: 90px;
+}
+
+.topbar-login-namedrop{
+  float: right;
+  margin-top: 10px;
+}
+
+.topbar-login-name{
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 4px;
+  line-height: normal;
+}
+
+.topbar-login-namedrop .dropdown-toggle::after{
+  display: none;
+}
+
+.topbar-login-namedrop .dropdown-menu{
+  border-radius: unset;
+  min-width: max-content;
+}
+
+.topbar-login-namedrop .dropdown-menu li{
+  padding: 5px 10px;
+}
+
+.topbar-login-namedrop .dropdown-menu a{
+  padding: unset;
+}
+
+
+
+
+/****** issues point ********/
+
+.collapse{
+  visibility: unset;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .top-bar .row{
+    display: block;
+  }
+
+  .float-left{
+    float: left;
+  }
+}
+
+
+
+
+/********* popup *********/
+
+.modal-header .btnGrp{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.min{
+  width: 200px;
+  height: 25px;
+  overflow: hidden !important;
+  padding: 0px !important;
+  margin: 0px;
+  float: left;
+  position: static !important;
+  opacity: 1 !important;
+}
+
+.min .modal-dialog,
+.min .modal-content, .min .modal-content-min{
+  height: 100%;
+  width: 100%;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.min .modal-header{
+  height: 100%;
+  width: 100%;
+  margin: 0px !important;
+  padding: 3px 5px !important;
+}
+
+.display-none{
+  display: none;
+}
+
+button .fa{
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.min .fa{
+  font-size: 14px;
+}
+
+.min .menuTab{
+  display: none;
+}
+
+button:focus{
+  outline: none;
+}
+
+.min .popup-topbar-hidden{
+  display: none;
+}
+
+/*.popup-topbar-title{
+  display: none;
+}
+
+.min .popup-topbar-title{
+  display: block !important;
+}*/
+
+
+.min .popup-topbar-title,.min .popup-top-rightdiv button{
+  margin-top: 2px;
+}
+
+.min .popup-topbar-title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 140px;
+}
+
+.min .large-popup-topdiv .breadcomb-list{
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+.min .breadcomb-area .breadcomb-list{
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+.min .popup-top-rightdiv button{
+  margin-left: 10px;
+}
+
+ .minmaxCon{
+  height: 35px;
+  bottom: 1px;
+  left: 1px;
+  position: fixed;
+  right: 1px;
+  z-index: 99999;
+} 
+
+.minmaxCon{
+  /* z-index: 9999;
+  transform: translate(8%, -30px);
+  position: relative; */
+}
+
+.modal-fullscreen{
+  width: 97% !important;
+}
+
+.popup-tab-footerbar{
+
+}
+
+.popup-tab-footerbar .min{
+
+}
+
+.modal-fullscreen .min{
+
+}
+
+.modal-fullscreen .popup-tab-footerbar .min{
+  
+}
+
+.mainpopup-footerbar .popup-tab-footerbar{
+  position: relative;
+  left: 145px;
+  bottom: 25px;
+}
+
+.min-createproduct-mainpopup-footerbar .popup-tab-footerbar .modal{
+  display: none !important;
+}
+
+.min .react-resizable{
+  width: unset !important;
+}
+
+
+
+
+/********** popup ******/
+.modal-content {
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden; /* Ensure content stays inside */
+}
+
+.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize; /* Show diagonal resize cursor */
+}
+
+.react-resizable-handle-se {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: gray;
+  width: 20px;
+  height: 20px;
+  cursor: se-resize;
+}
